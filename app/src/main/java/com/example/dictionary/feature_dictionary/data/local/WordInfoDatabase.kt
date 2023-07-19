@@ -7,10 +7,14 @@ import com.example.dictionary.feature_dictionary.data.local.entity.WordInfoEntit
 
 @Database(
     entities = [WordInfoEntity::class],
-    version = 1
+    version = 2
 )
 @TypeConverters(Converters::class)
 abstract class WordInfoDatabase: RoomDatabase() {
 
     abstract val dao: WordInfoDao
+
+    companion object{
+        const val DATABASE_NAME = "word_db"
+    }
 }
